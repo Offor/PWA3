@@ -36,6 +36,7 @@ self.addEventListener('fetch', function (e) {
                 // add the new file to cache
                 return caches.open(cacheName).then(function (cache) {
                     cache.put(e.request, response.clone());
+                    
                     return response;
                 });
             });
